@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Montserrat:wght@700&family=Nunito:wght@600&family=Rubik:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Nunito', sans-serif;
+}
+
+:root{
+    --primary-color: 100,92,187;
+    --blue-color: 114,134,211;
+}
+
+body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+body .container .form-control{
+    width: 100%;
+    height: 300px;
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body .container .form-control .card{
+    width: 100%;
+    height: 300px;
+    max-width: 40%;
+    min-width: 300px;
+}
+
+body .container .form-control .card textarea{
+   width: 100%;
+   height: 100%;
+   font-size: 1.12em;
+   border: 0.15em solid #cccccc;
+   border-radius: 1.2em;
+   resize: none;
+   outline: none;
+   padding: 0.5em;
+}
+
+body .container .form-control .card > template.output{
+    background-color: rgba(0,0 , 0, 0.2);
+}
+
+body .container .row{
+    display: flex;
+    width: 90%;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+}
+body .container .row.selects{
+width: 90%;
+justify-content: space-evenly;
+}
+
+body .container .row .submit{
+width: 250px;
+height: 60px;
+background-color: rgb(var(--primary-color));
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 1.2em;
+color: rgb(255, 255, 255);
+font-size: 1.2em;
+outline: none;
+cursor: pointer;
+--wk-rp-color:rgba(255,255,255,0.3);
+--wk-rp-transition:30;
+overflow: hidden;
+position: relative;
+}
+
+body .container .row .submit p{
+    pointer-events: none;
+    z-index: 1000;
+}
+
+body .container .row .submit svg {
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%,-50%);
+    position:none;
+    z-index: 1000;
+    display: none;
+}
+
+body .container .row .submit:disabled > svg {
+    display: block;
+}
+
+ion-icon{
+    font-size: 30px;
+}
+
+@media(max_width: 700px){
+    body .container .form-control{
+        flex-direction: column;
+        height: 70%;
+    }
+
+    body .container .form-control .card{
+        font-size: 90%;
+    }
+
+    body .container .row.selects{
+        font-size: 80%;
+    }
+
+    ion-icon.rotate{
+        transform: rotate(90deg);
+    }
+}
+
+select{
+    font-size: 1.2em;
+    appearance: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    flex: 1;
+    padding: 0.5em;
+    color: rgb(255, 255, 255);
+    background-color: rgb(var(--primary-color));
+    cursor: pointer;
+}
+
+select ::-ms-expand{
+    display: none;
+}
+
+.select{
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 2.5em;
+    border-radius: 1.2em;
+    overflow: hidden;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.6em;
+    background-color: rgb(var(--primary-blue));
+    transition: 0.25s all ease;
+    pointer-events: none;
+    color: rgb(255, 255, 255);
+
+}
